@@ -1419,11 +1419,13 @@ BZFILE * bzopen_or_bzdopen
 
    strcat(mode2, writing ? "wb" : "rb" );
 
+#ifndef _WIN32
    /* open fds with O_CLOEXEC _only_ when we are the initiator
     * aka. bzopen() but not bzdopen() */
    if(open_mode == 0) {
       strcat (mode2, writing ? "e" : "e" );
    }
+#endif
 
    if (open_mode==0) {
       if (path==NULL || strcmp(path,"")==0) {
