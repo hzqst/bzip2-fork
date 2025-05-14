@@ -5,6 +5,8 @@ project(bzip2
         DESCRIPTION "This Bzip2/libbz2 a program and library for lossless block-sorting data compression."
         LANGUAGES C)
 
+include("VC-LTL helper for cmake.cmake")
+
 # See versioning rule:
 #  http://www.gnu.org/software/libtool/manual/html_node/Updating-version-info.html
 #
